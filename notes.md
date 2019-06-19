@@ -30,4 +30,6 @@ Be aware of the modifiers and default behavior. Interfaces methods are by defaul
 
 A static method cannot override a non-static method.
 
+A non-static method can hide a static method but not override it.
+
 #
