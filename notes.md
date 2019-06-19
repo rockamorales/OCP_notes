@@ -98,3 +98,34 @@ can contains abstract, default and static methods.
   
 ```
 * Two generic class are considered superclass and subclass of each other if their raw types are in the same inheritance chain and the type arguements are no different
+
+# Create and use Objects of Several Collection Subtypes
+## ArrayList
+  * Is a resizable-array implementation of the List interface
+  * When elements are added to an ArrayList instance, its capacity grows automatically
+  * The ArrayList offers constant time for the _size_, _isEmpty_, _get_, _set_, _iterator_, and _listIterator_ operations, amortized constant time for the add operation, and linear time for the others
+### Constructors
+  * ``` ArrayList() ```: contructs and empty list with the initial capacity of ten
+  * ``` ArrayList(int initialCapacity) ``` : Contructs an empty list with the specified initial capacity
+  * ``` ArrayList(Collection<? extends E> c) ``` : Constructs a list containing the elements of the specified collection, in the order they are returned by the collection's iterator
+### Methods specified in the List interface
+  * _add_: Inserts an element to the list
+  * _set_: Replaces the element at the specified position in the list with the specified element
+  * _remove_: Removes an element from the list
+  * _get_: Returns the element at the specified position in the list
+  * _indexOf_: Returns the index of the first ocurrence of the specified element in the list (-1 if the list does not contain the element)
+  * _listIterator_: Returns a list iterator over the elements in the list
+### ArrayList specific methods
+  * ensureCapacity: Increases the capacity of the list, if necessary, to ensure that it can hold at least the number of elements specified by the minimun capacity argument
+  * trimToSize: Trims the capacity of the list ot its current size
+  * **default capacity is 10**
+## TreeSet 
+  * An implementation of the Set interface that sorts elements based on their ordering
+  * Elements of the TreeSet instance are ordered using their natural ordering, or by a Comparator provided at creation time, depending on which constructor is used
+  * The ordering maintained by a TreeSet instance should be consistent with the _equals_ method
+  ### Creating TreeSet
+    * ```TreeSet()```: Constructs a new, empty tree set, sorted according to the natural ordering of its elements
+    * ```TreeSet(SortedSet<E> s```: Constructs a new tree set containing the same elements and using the same ordering as the specified sorted set
+    * ```TreeSet(Collection<? extends E> c)```: Construnct a new tree set containing elements in the specified collection, sorted according to the antural ordering of its elements
+    * ```TreeSet(Comparator<? super E> comparator)```: Construnct a new, empty tree set sorted according to the specified comparator
+    
