@@ -75,3 +75,19 @@ can contains abstract, default and static methods.
     //As of java SE 7
     Person<String, Integer> person = new Person<>();
   ```
+### Bounded Type Parameters
+* To declare a bouded type parameters, specify the type parameter's name, then the extends keyword and the upper bound
+```
+  public class Persona<S, T extends Number>{
+    private S name;
+    private T age;
+    public Person (S name, T age){
+      this.name = name;
+      this.age = age;
+    }
+    public S getName(){return name;}
+    public int getAge(){ return age.intValue(); }
+  }
+  
+```
+* Two generic class are considered superclass and subclass of each other if their raw types are in the same inheritance chain and the type arguements are no different
