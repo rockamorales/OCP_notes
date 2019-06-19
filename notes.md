@@ -18,18 +18,23 @@ can contains abstract, default and static methods.
 
 #### Static methods can be hidden by the implementer. So does it means that static method is also accessible thru the implementer instance or class reference? 
 
-according to the content it can be only accessed thru the interface type only. not sure about thru instances of the implementer
+* according to the content it can be only accessed thru the interface type only. not sure about thru instances of the implementer
 
-Abtract methods can override a default method and a default method can override an abstract method
+* Abtract methods can override a default method and a default method can override an abstract method
 
-Static methods can be hidden by create a method with the same signature in the subinterface that can be either static, default or abstract
+* Static methods can be hidden by create a method with the same signature in the subinterface that can be either static, default or abstract
 
-All fields declared in an interfaces are static and final even if those modifiers/keywords are not specified
+* All fields declared in an interfaces are static and final even if those modifiers/keywords are not specified
 
-Be aware of the modifiers and default behavior. Interfaces methods are by default public, classes methods are by default package. when overridden a method, the overridding method cannot be more restrictive than the method it overrides. So if two methods one declared in class and other declared in an interface have no access modifier specified. they are actually having different access restrictions (be wary of this)
+* Be aware of the modifiers and default behavior. Interfaces methods are by default public, classes methods are by default package. when overridden a method, the overridding method cannot be more restrictive than the method it overrides. So if two methods one declared in class and other declared in an interface have no access modifier specified. they are actually having different access restrictions (be wary of this)
 
-A static method cannot override a non-static method.
+* A static method cannot override a non-static method.
 
-A non-static method can hide a static method but not override it.
+* A non-static method can hide a static method but not override it.
 
-#
+# Lambda Expressions
+* Functional interfaces are interfaces consisting of a single abstract method. 
+* Java 8 API provides an informative annotation, @FunctionalInterface, to indicate that the annotated type is intended to be a functional interface
+* Even when the @FunctionalInterface annotation is not specified the compiler will still treat the interface as functional if it contains only one abstract method
+* Can contains default and static methods. as long as the interface only has one abstract method, it will be treated as functional interface
+
