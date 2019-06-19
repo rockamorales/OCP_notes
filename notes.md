@@ -16,7 +16,8 @@ Interfaces can be considered contracts that rule how software components interac
 
 can contains abstract, default and static methods. 
 
-#### Static methods can be hidden by the implementer. So does it means that static method is also accessible thru the implementer instance or class reference?
+#### Static methods can be hidden by the implementer. So does it means that static method is also accessible thru the implementer instance or class reference? 
 
+according to the content it can be only accessed thru the interface type only. not sure about thru instances of the implementer
 
 #
