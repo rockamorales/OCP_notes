@@ -14,4 +14,9 @@
 # Interfaces
 Interfaces can be considered contracts that rule how software components interact. In the java programming language, interfaces are reference types that can be implemented by clases and extended by other interfaces, but cannot be instantiated
 
+can contains abstract, default and static methods. 
+
+#### Static methods can be hidden by the implementer. So does it means that static method is also accessible thru the implementer instance or class reference?
+
+
 #
