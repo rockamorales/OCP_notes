@@ -24,4 +24,8 @@ Abtract methods can override a default method and a default method can override 
 
 Static methods can be hidden by create a method with the same signature in the subinterface that can be either static, default or abstract
 
+All fields declared in an interfaces are static and final even if those modifiers/keywords are not specified
+
+Be ware of the modifiers and default behavior. Interfaces methods are by default public, classes methods are by default package. when overridden a method, the overridding method cannot be more restrictive than the method it overrides. So if two methods one declared in class and other declared in an interface have no access modifier specified. they are actually having different access restrictions (be wary of this)
+
 #
