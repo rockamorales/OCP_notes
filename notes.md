@@ -56,3 +56,4 @@ can contains abstract, default and static methods.
   - Conditional expressions,
   - Ternary operators (? :)
   - Cast expressions
+* when using a lambda expression in place of a functional interface parameter types of the expression must be exactly the same as types of the interfaces methods. this means that even related types cannot be replacing the functional interface method defined parameters (primitive vs wrappers | supertype vs subtype)
