@@ -120,12 +120,69 @@ can contains abstract, default and static methods.
   * trimToSize: Trims the capacity of the list ot its current size
   * **default capacity is 10**
 ## TreeSet 
+  * As an implementation of a Set it does not accept duplicate elements ???
   * An implementation of the Set interface that sorts elements based on their ordering
   * Elements of the TreeSet instance are ordered using their natural ordering, or by a Comparator provided at creation time, depending on which constructor is used
   * The ordering maintained by a TreeSet instance should be consistent with the _equals_ method
   ### Creating TreeSet
-    * ```TreeSet()```: Constructs a new, empty tree set, sorted according to the natural ordering of its elements
-    * ```TreeSet(SortedSet<E> s```: Constructs a new tree set containing the same elements and using the same ordering as the specified sorted set
-    * ```TreeSet(Collection<? extends E> c)```: Construnct a new tree set containing elements in the specified collection, sorted according to the antural ordering of its elements
-    * ```TreeSet(Comparator<? super E> comparator)```: Construnct a new, empty tree set sorted according to the specified comparator
-    
+  * ```  TreeSet() ```: Constructs a new, empty tree set, sorted according to the natural ordering of its elements
+  * ``` TreeSet(SortedSet<E> s) ``` : Constructs a new tree set containing the same elements and using the same ordering as the specified sorted set
+  * ``` TreeSet(Collection<? extends E> c) ``` : Construnct a new tree set containing elements in the specified collection, sorted according to the natural ordering of its elements
+  * ``` TreeSet(Comparator<? super E> comparator) ``` : Construct a new, empty tree set sorted according to the specified comparator
+  ### Methods specified in the Set Interface
+  * _add_: Adds ethe specified element to the set if it is not already present, returns a boolean value indicating whether the element was added or not 
+  * _remove_: Removes the specified element from the set if it is present, and returns a bolean value indicating whether the element is present
+  * _contains_: Returns true if the set contains the specified element
+  * _iterator_: Returns an iterator over elements in the set in ascending order
+  ### TreeSet specific methods
+  * _ceiling_: Returns the least element in the set greater than or equal to the specified element, or null if there is no such element
+  * _floor_: Returns the greatest element in the set less than or equal to the specified element
+  * _headSet_: Returns a view of the portion of the set whose elements are less than the specified element
+  * _tailSet_: Returns a view of the portion of the set whose elements are greater than the specified element
+  * _descendingIterator_: Returns an iterator over elements in the set in descending order
+  * _comparator_: Returns the comparator used to order elements in the set or null if the TreeSet is using the natural order
+
+## TreeMap
+  * Is an implementation of the Map interface
+  * Elements of the TreeMap instance are ordered using the natural ordering of their key, or by a Comparator provided at creation time, depending on which constructor is used
+  * The ordering maintained by a TreeMap instance should be consistent with the equals method
+### Constructors
+ * ``` TreeMap() ```: Creates a new, empty tree map, using the natural ordering of its keys
+ * ``` TreeMap(SortedMap<K, ? extends V> m) ```: Constructs a new tree map containing the same mappings and using the same ordering as the specified sorted map
+ * ``` TreeMap(Map<? extends K, ? extends V> m) ```: Constructs a new tree map containing the same mappings as the given map, ordered according to the natural ordering of its keys
+ * ``` TreeMap(Comprator<? super K> comparator) ```: Constructs a new, empty tree map, ordered according to the given comparator
+### Methods specified in the Map interface
+  * _put_: Associates the specified value with the specified key in the map
+  * _replace_: Replaces the entry for the specified key. Overloaded, two methods, method with one value parameter will replace the entry if it is currently mapped to any value, while the method with two parameters replaces the entry only if the key is currently mapped to the specified value in the second parameter
+  * _remove_: remove the mapping for the specified key from the map. There are two overloaded version. the one that has only one parameter, removes the entry when the specified key exists, the one with two parameters removes the entry only if the key is mapped to the specified value.
+  * _get_: Returns the value to which the specified key is mapped
+  * _containsKey_: Returns true if the map contains a mapping for the specified key
+  * _containsValue_: Returns true if the map maps one or more keys to the specified value
+  * _entrySet_: Returns a Set view of the mappings contained in the map
+  * _keySet_: Returns a Set view of the keys contained in the map
+  * _values_: Returns a collection view of the values contained in the map
+  * _ceilingEntry_: Returns a key-value mapping associated with the least key grester than or equal to the specified key
+  * _floorEntry_: Returns a key-value mapping associated with the greatest key  less than or equal to the specified key
+  * _descendingMap_: Returns a reverse order view of the mappings contained in the map
+  * _comparator_: Returns the comparator used to order the keys in the map or null if map is using natural order to order the keys
+
+## ArrayDeque
+  * Is a resizable-array implementation of the Deque interface, supporting insertion, removal and retrieval of elements at both ends
+  * Most ArrayDeque operations run in amortized constant time
+  * ArrayDeque instances have no capacity restrictions, their capacity grows automatically to support usage
+### Constructors
+  * ``` ArrayDeque() ```: constructs an empty array deque with an initial capacity sufficient to hold 16 elements
+  * ``` ArrayDeque(int numElements) ```: Constructs an empty array deque with an initial capacity sufficient to hold the specified number of elements
+  * ``` ArrayDeque(Collection<? extends E> c) ```: Constructs a deque containing elements of the specified collection, in the order they are returned by the collection's iterator
+### Methods specified in Deque interface
+* _add*_: Inserts the specified element to the deque
+* _remove*_: Removes the specified element from the deque
+* _get*_: Returns the element at the specified position in the deque
+* _peek*_: Retrieves, but does not remove, the first/last element of the deque
+* _poll*_: Retrieves and removes the first/last element of the deque
+* _offer*_: Inserts the speficied element at the begining or the end of the deque
+* _iterator_: Returns an iterator over the elements in the deque
+* _descendingIterator_: Returns an iterator over the elements in the deque in revers sequential order
+
+
+  
