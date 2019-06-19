@@ -22,4 +22,6 @@ according to the content it can be only accessed thru the interface type only. n
 
 Abtract methods can override a default method and a default method can override an abstract method
 
+Static methods can be hidden by create a method with the same signature in the subinterface that can be either static, default or abstract
+
 #
