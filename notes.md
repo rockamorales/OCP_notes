@@ -37,4 +37,22 @@ can contains abstract, default and static methods.
 * Java 8 API provides an informative annotation, @FunctionalInterface, to indicate that the annotated type is intended to be a functional interface
 * Even when the @FunctionalInterface annotation is not specified the compiler will still treat the interface as functional if it contains only one abstract method
 * Can contains default and static methods. as long as the interface only has one abstract method, it will be treated as functional interface
-
+* Lambda expressions are a consice construct providing implementations for functional interfaces, allowing you to treat functionality as data
+* it consists of three elements
+  1. A comma-separated list of formal parameters, enclosed in parentheses
+  2. The arrow token (->)
+  3. A body, which consists of a single expression or a statement block
+* Can take any number of arguments
+* Parameter types can be explicitly declared or inferred from the context; as long as the compiler can determine the type of a lambda exression, you don't need to specify the types of the expression's parameters
+* The number of parameters of a lambda expression must match that of the corresponding functional interfaces's method.
+* If the body of a lambda expression consists of only a single statement, the enclosing curly brackets can be left off; in that case, the ending semicolon of the statement and the return keyword, if any, must also be removed.
+* The type is determine by the context where it is used
+* Supporting contexts:
+  - Variable assignments
+  - Return statements
+  - Array initializers
+  - Method/constructor arguments
+  - Lambda expression bodies
+  - Conditional expressions,
+  - Ternary operators (? :)
+  - Cast expressions
