@@ -57,3 +57,21 @@ can contains abstract, default and static methods.
   - Ternary operators (? :)
   - Cast expressions
 * when using a lambda expression in place of a functional interface parameter types of the expression must be exactly the same as types of the interfaces methods. this means that even related types cannot be replacing the functional interface method defined parameters (primitive vs wrappers | supertype vs subtype)
+
+# Generics
+* Allows a stronger type checks at compile time
+* Elimination of casting
+* Enabling you to implement generic algorithms on collections
+
+ ### Defining a Generic class
+ ```
+ modifiers class class-name<T1, T2,..., Tn>{ /* Class body*/}
+ ```
+ ### referencing a Generic class
+  ```
+    Person<String, Integer> person;
+    // Instantiating the class
+    Person<String, Integer> person = new Person<String, Integer>();
+    //As of java SE 7
+    Person<String, Integer> person = new Person<>();
+  ```
