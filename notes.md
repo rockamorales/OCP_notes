@@ -20,4 +20,6 @@ can contains abstract, default and static methods.
 
 according to the content it can be only accessed thru the interface type only. not sure about thru instances of the implementer
 
+Abtract methods can override a default method and a default method can override an abstract method
+
 #
