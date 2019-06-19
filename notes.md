@@ -185,4 +185,45 @@ can contains abstract, default and static methods.
 * _descendingIterator_: Returns an iterator over the elements in the deque in revers sequential order
 
 
+ # Comparable and Comparator Interfaces
+ ## Comparable
+ * Imposed a total ordering on objects of an implementation class
+ * defines a single method
+  ```
+    int compareTo(T object)
+  ```
+  * Objects of a class implementing the Comparable interface can be sorted in a collection or array
+  * The behavior of the _compareTo_ and equal method should be consistent
   
+  ```
+    public class Person implements Comparable<Person> {
+      private String name;
+      private int age;
+      public Person(String name, int age){
+        this.name = name;
+        this.age = age;
+    }
+    public String getName(){ return this.name; }
+    public int getAge(){ return this.age; }
+    public int compareTo(Person person){
+      int comp = this.name.compareTo(person.name);
+      return comp != 0 ? comp: person.age - this.age;
+    }
+  ```
+  
+  ## Comparator Interface
+    * The Comparator interface imposes a total ordering on objects in a collection or array
+    * The Comparator interface has only one abstract method:
+      ```
+        int compare(T object1, T object2);
+      ```
+    * An instance of a Comparator implementation class can be used to control the order of elements in a collection or Array
+    * The behavior of the compare and equals method should be consistent
+    
+  ## Comparable vs Comparator
+    * Both Comparable and Comparator are comparison functions comparing objects of the same type
+    * Comparable is internal to objects in comparison, while Comparator is external
+  **Scenarios where comparator is better than Comparable**
+    * You don't have control over the source code of the class whose instances are compared
+    * You want to compare objects in different ways
+    
