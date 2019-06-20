@@ -210,25 +210,25 @@ can contains abstract, default and static methods.
       return comp != 0 ? comp: person.age - this.age;
     }
   ```
-  
+  ccccccc
   ## Comparator Interface
-    * The Comparator interface imposes a total ordering on objects in a collection or array
-    * The Comparator interface has only one abstract method:
-      ``` java
-        int compare(T object1, T object2);
-      ```
-    * An instance of a Comparator implementation class can be used to control the order of elements in a collection or Array
-    * The behavior of the compare and equals method should be consistent
+  * The Comparator interface imposes a total ordering on objects in a collection or array
+  * The Comparator interface has only one abstract method:
+    ``` java
+      int compare(T object1, T object2);
+    ```
+  * An instance of a Comparator implementation class can be used to control the order of elements in a collection or Array
+  * The behavior of the compare and equals method should be consistent
     
   ## Comparable vs Comparator
-    * Both Comparable and Comparator are comparison functions comparing objects of the same type
-    * Comparable is internal to objects in comparison, while Comparator is external
+  * Both Comparable and Comparator are comparison functions comparing objects of the same type
+  * Comparable is internal to objects in comparison, while Comparator is external
   **Scenarios where comparator is better than Comparable**
     * You don't have control over the source code of the class whose instances are compared
     * You want to compare objects in different ways
     
 # Collections, Streams and Filters
-## Predicate
+  ## Predicate
    * In programming, a predicatet is an expression that evaluates to a boolean value
    * The Java SE 8 API defines a functional interface, named _Predicate_, often used for filtering operations; this interface has a single abstract method:
    ``` java
