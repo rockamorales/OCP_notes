@@ -210,7 +210,7 @@ can contains abstract, default and static methods.
       return comp != 0 ? comp: person.age - this.age;
     }
   ```
-  ccccccc
+
   ## Comparator Interface
   * The Comparator interface imposes a total ordering on objects in a collection or array
   * The Comparator interface has only one abstract method:
@@ -271,5 +271,45 @@ can contains abstract, default and static methods.
   ```
   * Predicate is a generic interface, so it should be used specifying the type it will apply for. If type is not specified then Object is taken by default, which means that the order to override the test method from Predicate interface, test method should have Object type as parameter, if it has any other type, we are not overriding the test method defined in predicate, so code will fails to compile
   
-  
+
+# Iterate Using forEach Methods of Stream and List
+## The Consumer interface
+  * The _Consumer_ interface represents an operation that accepts a single inut argument and returns no result
+  * Abstract method signature:
+  ``` java
+  void accept(T t);
+  ```
+  * _Consumer_ is a functional interface, thus its implementation can be represented by a lambda expression
+
+## The Stream.forEach method 
+  * method has a _Consumer_ parameter that acts on each element of the stream:
+    ``` java
+      void forEach(Consumer<? super T> action);
+    ```
+   * This method is a terminal operation, consuming the stream
+   * The behavior of this method is nondeterministic
+## List.forEach Method
+   * The forEach method in the _List_ interface is a default method inherited from the Iterable interface with the signature:
+     ``` java
+      void forEach(Consumer<? super T> action)
+     ```
+   * This method performs the specified action on each element of the _List_
+   * The behavior of this smethod is deterministic
+   
+# Stream Interface and Stream Pipeline
+## The Stream Interface
+  * Reprensents a sequence of elements and supports aggregate operations
+  * A Stream instance can be created by a statuc method in the _Stream_ interface, or by a stream creation method invoked on a data source; a stram can be operated on only once
+  * The source of a stream should not be modified while the stream is being processed
+  * Operations on a stream are divided into intermediate and terminal operations, and combined into a stream pipeline
+  * Intermediate operations return a new Stream; these operations are lazy and only triggered when the terminal operation is initiated
+  * A terminal operation may traverse the stream to produce a result or a side-effect; after the terminal operation is performed, the stream pipeline is considered consumed. To use the stream again, you have to generate other stream from its original data source.
  
+ **Example**
+ ``` java
+ Collection<Integer> collection = Arrays.asList(1,2,3,4,5,6);
+ Stream<Integer> stream = collection.stream();
+ stream.filter(i -> i%2 == 0).filter( i -> i%3 == 0).forEach(i -> System.out.println(i));
+ ```
+  * _forEach_ is pipeline terminal operation
+  
