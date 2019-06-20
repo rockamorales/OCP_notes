@@ -71,11 +71,11 @@ can contains abstract, default and static methods.
 * Enabling you to implement generic algorithms on collections
 
  ### Defining a Generic class
- ```
+ ``` java
  modifiers class class-name<T1, T2,..., Tn>{ /* Class body*/}
  ```
  ### referencing a Generic class
-  ```
+  ``` java
     Person<String, Integer> person;
     // Instantiating the class
     Person<String, Integer> person = new Person<String, Integer>();
@@ -84,7 +84,7 @@ can contains abstract, default and static methods.
   ```
 ### Bounded Type Parameters
 * To declare a bouded type parameters, specify the type parameter's name, then the extends keyword and the upper bound
-```
+``` java
   public class Persona<S, T extends Number>{
     private S name;
     private T age;
@@ -189,13 +189,13 @@ can contains abstract, default and static methods.
  ## Comparable
  * Imposed a total ordering on objects of an implementation class
  * defines a single method
-  ```
+  ``` java
     int compareTo(T object)
   ```
   * Objects of a class implementing the Comparable interface can be sorted in a collection or array
   * The behavior of the _compareTo_ and equal method should be consistent
   
-  ```
+  ``` java
     public class Person implements Comparable<Person> {
       private String name;
       private int age;
@@ -214,7 +214,7 @@ can contains abstract, default and static methods.
   ## Comparator Interface
     * The Comparator interface imposes a total ordering on objects in a collection or array
     * The Comparator interface has only one abstract method:
-      ```
+      ``` java
         int compare(T object1, T object2);
       ```
     * An instance of a Comparator implementation class can be used to control the order of elements in a collection or Array
@@ -227,3 +227,49 @@ can contains abstract, default and static methods.
     * You don't have control over the source code of the class whose instances are compared
     * You want to compare objects in different ways
     
+# Collections, Streams and Filters
+## Predicate
+   * In programming, a predicatet is an expression that evaluates to a boolean value
+   * The Java SE 8 API defines a functional interface, named _Predicate_, often used for filtering operations; this interface has a single abstract method:
+   ``` java
+    booleean test(T t)
+   ```
+ ## Filtering Collection Elements
+   * You can filter elements of a collection using the _removeIf_ method, a default method of the Colletion interface
+   * The _removeIf_ method takes a Predicate argument and removes all elements of the collection that satisfy the specified predicate:
+   ``` java
+    boolean removeIf(Predicate<? super E> filter)
+   ```
+   * _Predicate_ is a functional interface, thus you can use a lambda expresion as the argument to the removeIf method
+   **Example**
+   ``` java
+   Collection<Integer> collection = new ArrayList<>();
+   collection.add(1); collection.add(2);
+   collection.add(3); collection.add(4);
+   collection.removeIf(new Predicate<Integer>(){
+    public boolean test(Integer i){
+      return i % 2 == 0;
+    }
+   }
+   for (Integer number : collection) {
+    System.out.println(number);
+   }
+   ```
+ ## Filtering Stream Elements
+  * You can filter elements of a Stream using the _filter_ method, which takes a _Predicate_ argument and returns a stream consisting of elements that match the specified predicate:
+  ``` java
+   Stream<T> filter (Predicate<? super T> predicate);
+  ```
+  * Similar to filtering elements of a collection, the _Predicate_ argument to the _filter_ method can be represented by a lambda expression
+  * The _filter_ method is an intermediate operation, hence it needs to be followed by a terminal operation
+  
+  **Example**
+  ``` java
+    Stream<Integer> originalStream = Stream.of(0, -1, 1, -2, 2);
+    Stream<Integer> filteredStream = originalStream.filter(i -> i > 0);
+    filteredStream.forEach(i -> System.out.println(i));
+  ```
+  * Predicate is a generic interface, so it should be used specifying the type it will apply for. If type is not specified then Object is taken by default, which means that the order to override the test method from Predicate interface, test method should have Object type as parameter, if it has any other type, we are not overriding the test method defined in predicate, so code will fails to compile
+  
+  
+ 
