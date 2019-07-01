@@ -313,3 +313,5 @@ can contains abstract, default and static methods.
  ```
   * _forEach_ is pipeline terminal operation
   
+  # Filtering a collection by using Lambda Expressions
+  
